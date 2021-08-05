@@ -1,0 +1,28 @@
+*{
+    border: solid black 2px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: none;
+}
+
+.cont{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.displayBox{
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+}
