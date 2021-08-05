@@ -17,8 +17,11 @@ def printName(name):
 
 @app.route('/repeat/<int:x>/<word>')
 def repeat(x,word):
-    return (str(word)+' ') * int(x)
-
+    output = ''
+    for i in x:
+        output += f"<p>{word}</p>"
+    return output
+    # return (str(word)+' ') * int(x)
 # @app.errorhandler(HTTPException)
 # def err():
 #     return "Sorry! No response. Try again.", 404
