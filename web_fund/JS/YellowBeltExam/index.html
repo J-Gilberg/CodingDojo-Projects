@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navContainer">
+        <div class="navContent">
+            <img class="leafImg" src="img/assets/leaf.png" alt="Leaf Logo">
+            <h1 class="title">EasyBay</h1>
+            <input class="searchBar" type="search" placeholder="Search for Anything">
+            <a class="signIn" href="#">Sign In</a>
+            <img class="cartImg" onclick="cart()" src="img/assets/cart-dark.png" alt="Shopping Cart">
+        </div>
+    </div>
+    <div class="contentContainer">
+        <div class="selectionBar">
+            <h1>Aeonium</h1>
+            <h1>Andormischus</h1>
+            <h1>Agave</h1>
+            <h1>Aloe</h1>
+            <h1>Anacampseros</h1>
+            <h1>Aristaloe</h1>
+            <h1>More...</h1>
+        </div>
+        <h1 class="infoString">Your Source for Serious Succulent Specialties</h1>
+        <div class="infoContainer">
+            <div class="mainSection">
+                <div class="mainText">
+                    <h1>Discover Succulent varieties one pot or rack at a time!</h1>
+                    <div class="director">
+                        <h1>Discover</h1>
+                        <img class="arrow" src="img/assets/arrow-light.png" alt="Arrow">
+                    </div>
+                </div>
+                <img id="mainImg" src="img/assets/succulents-1.jpg" alt="Succulent Img">
+            </div>
+            <div class="sideSection">
+                <img id="sideImg" src="img/assets/aloe-m.jpg" alt="Aloe">
+                <div class="director">
+                    <h1>Soothing Aloe</h1>
+                    <img class="arrow" src="img/assets/arrow-light.png" alt="Arrow">
+                </div>
+            </div>
+        </div>
+        <div class="selectionContainer">
+            <div class="imgContainer">
+                <img class="plantImg" src="img/assets/aeonium-s.jpg" alt="Aeonium">
+                <h1 class="plantDesc">Aeonium</h1>
+            </div>
+            <div class="imgContainer">
+                <img class="plantImg" src="img/assets/aloe-s.jpg" alt="Agave">
+                <h1 class="plantDesc">Agave</h1>
+            </div>
+            <div class="imgContainer">
+                <img class="plantImg" src="img/assets/cactus-s.jpg" alt="Cactus">
+                <h1 class="plantDesc">Cactus</h1>
+            </div>
+            <div class="imgContainer">
+                <img class="plantImg" src="img/assets/echeveria-s.jpg" alt="Echeveria">
+                <h1 class="plantDesc">Echeveria</h1>
+            </div>
+            <div class="imgContainer">
+                <img class="plantImg" src="img/assets/sedum-s.jpg" alt="Sedum">
+                <h1 class="plantDesc">Sedum</h1>
+            </div>
+            <div class="imgContainer">
+                <img class="plantImg" src="img/assets/sempervivum-s.jpg" alt="Sempervivum">
+                <h1 class="plantDesc">Sempervivum</h1>
+            </div>
+        </div>
+        <div id="alertbar">
+            <img src="img/assets/alert-dark.png" alt="Alert Symbol">
+            <h1>This site makes use of third-party cookies, by clicking "I accept" you agree to the terms outlined in
+                our <a>cookie policy</a></h1>
+            <button class="acceptBtn" onclick="accept()">I accept</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

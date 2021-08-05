@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div>
+                <h1 class="nav-text">Dojonary</h1>
+            </div>
+            <div>
+                <input type="search" placeholder="search">
+            </div>
+            <div>
+                <button class="btn nav-text" onclick="loginBtn(this)">Login</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="main">
+            <div class="mainBox">
+                <div class="mainBoxLeft">
+                    <div>
+                        <h1>ninja</h1>
+                        <h2>noun</h2>
+                        <h3>Plural: ninjas</h3>
+                    </div>
+                    <button class="btn likesBtn" onclick="likeBtn1(this); alert('ninja was liked')">0 Likes</button>
+                </div>
+                <p class="mainBoxRight">A practitioner skilled in the <a>Japanese</a> art of <a>ninjutsu</a></p>    
+            </div>
+            <div class="mainBox">
+                <div class="mainBoxLeft">
+                    <div>
+                        <h1>ninja</h1>
+                        <h2>noun</h2>
+                        <h3>Plural: ninjas</h3>
+                    </div>
+                    <button class="btn likesBtn" onclick="likeBtn2(this)">0 Likes</button>
+                </div>
+                <p class="mainBoxRight">A <a>programmer</a> who breaks down problems with <a>zen</a>-like focus</p>    
+            </div>
+        </div>
+        <div class="side">
+            <div class="sideBox">
+                <h4>Dojonary is defined by YOU</h4>
+                <button class="btn" onclick="hide(this)"> Add Definition</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

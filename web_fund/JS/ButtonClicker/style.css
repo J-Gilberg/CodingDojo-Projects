@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Nav Container */
+nav{
+    display: flex;
+    background-color: #212529;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 530px;
+    gap: 10px;
+}
+
+.nav-text{
+    color: whitesmoke;
+    text-decoration: none;
+    list-style-type: none;
+    white-space: nowrap;
+}
+
+
+
+/* Content Container */
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 10px;
+    width: auto;
+}
+
+.mainBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    width: 350px;
+    gap: 10px;
+    border: #212529 solid 2px;
+}
+
+.mainBoxLeft{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+}
+
+.mainBoxRight{
+    padding: 5px;
+}
+
+.side{
+    display: flex;
+    align-items: flex-start;
+    width: 150px;
+}
+
+.sideBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    width: 100%;
+    padding: 5px;
+    border: #212529 3px solid;
+}
+
+h1{
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+h2{
+    font-size: medium;
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+}
+
+h3{
+    font-size: medium;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* Buttons */
+.btn{
+    background-color: darkred;
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: b;
+}
+
+.likesBtn{
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+}
+
+/* Links */
+a{
+    color: blue;
+    text-decoration: underline;
+}

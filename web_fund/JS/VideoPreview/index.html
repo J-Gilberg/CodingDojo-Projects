@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Video Preview</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="navContainer">
+                <h1>VideoLab</h1>
+                <input type="search" placeholder="Search">
+                <button class="btn">Login</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="main">
+                <video class="videoMain" onmouseover="videoPreview(this)" onmouseout="videoPreview(this)" src="videos/BoatVideo.mp4"></video>
+                <div class="videoInfo">
+                    <div class="videoDesc">
+                        <h1>Video Title</h1>
+                        <h2>1.3K views | June 18, 2021</h2>
+                        <div class="userBox">
+                            <img class="userImg" src="img/userIcon.png" alt="User Image">
+                            <a href="#">Example User Name</a>
+                        </div>
+                    </div>
+                    <button class="btn">Subscribe</button>
+                </div>
+            </div>
+            <div class="side">
+                <h3 class="sideHeader">Up Next</h3>
+                <div class="videoPreview">
+                    <video class="videoSmall"  onmouseover="videoPreview(this)" onmouseout="videoPreview(this)" src="videos/OceanVideo.mp4"></video>
+                    <p>Description</p>
+                </div>
+                <div class="videoPreview">
+                    <video class="videoSmall" onmouseover="videoPreview(this)" onmouseout="videoPreview(this)" src="videos/PlainVideo.mp4"></video>
+                    <p>Description</p>
+                </div>
+                <div class="videoPreview">
+                    <video class="videoSmall" onmouseover="videoPreview(this)" onmouseout="videoPreview(this)" src="videos/BoatVideo.mp4"></video>
+                    <p>Description</p>
+                </div>
+                <div class="videoPreview">
+                    <video class="videoSmall" onmouseover="videoPreview(this)" onmouseout="videoPreview(this)" src="videos/CityVideo.mp4"></video>
+                    <p>Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    color: black;
+    font-family: cursive;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+#userCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: 500px;
+    height: 300px;
+    margin: 1%;
+    border: 2px black solid;
+}
+
+#colorBar{
+    width: 500px;
+    height: 7%;
+    background-color: deepskyblue;
+    position: absolute;
+    top: 1%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.userName{
+    font-size: xx-large;
+    padding: 10px 5px;
+}
+
+.location{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+
+}
+
+.info{
+    padding: 0px 5px;
+}
+
+img.icons{
+    height: 15px;
+    width: 15px;
+    padding-right: 2px;
+
+}
+
+.textBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    
+}
+
+.userPic{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 5%;
+    left: 3%;
+}
+
+.settings{
+    padding: 20px 0px 10px 5px;
+    color: blue;
+}

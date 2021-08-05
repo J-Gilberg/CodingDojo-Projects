@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gaming Dojo</title>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="navContent">
+            <h1>Gaming<span class="purpleText">Dojo</span></h1>
+            <div class="navLinks">
+                <select class="currency" name="currency" id="currency">
+                    <option value="euro">euro €</option>
+                    <option value="usd">USD $</option>
+                    <option value="yaun">Yuan ¥</option>
+                </select>
+                <div class="cart">
+                    <img class="navImg" src="img/cart-light.png" alt="Shopping Cart">
+                    <a id="cartCount">0</a>
+                </div>
+                <img class="navImg" src="img/search-light.png" alt="Search">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="contentHeader">
+                <h1>Highlights</h1>
+            </div>
+            <div class="imgBanner">
+                <img onclick="changeBanner(this.id)" id="arrowLeft" class="arrow" src="img/chevron-left.png"
+                    alt="Arrow Left">
+                <img id="scrollBanner" src="img/stonepunk.png" alt="Banner">
+                <img onclick="changeBanner(this.id)" id="arrowRight" class="arrow arrowFlip" src="img/chevron-left.png"
+                    alt="Arrow Right">
+            </div>
+            <div class="bannerScroll">
+                <div id="BS1"></div>
+                <div id="BS2"></div>
+                <div id="BS3"></div>
+                <div id="BS4"></div>
+            </div>
+            <div class="gameList">
+                <div class="gameListing">
+                    <img class="listingImg" src="img/stonepunk.png" alt="Stonepunk Game">
+                    <h1 class="gameDesc">Stonepunk 10000 BCE</h1>
+                    <div class="systemImg">
+                        <img src="img/apple.png" alt="Apple Symbol">
+                        <img src="img/windows.png" alt="Windows Symbol">
+                    </div>
+                    <div class="pricing">
+                        <h1 class="discount">-20%</h1>
+                        <div class="price">
+                            <h1 class="originalPrice">€ 14.98</h1>
+                            <h1>€ 10.49</h1>
+                        </div>
+                        <button onclick="addToCart()" class="buyBtn">Buy</button>
+                    </div>
+                </div>
+                <div class="gameListing">
+                    <img class="listingImg" src="img/cafe-neko.png" alt="Cafe Neko Game">
+                    <h1 class="gameDesc">Cafe Neko</h1>
+                    <div class="systemImg">
+                        <img src="img/apple.png" alt="Apple Symbol">
+                        <img src="img/windows.png" alt="Windows Symbol">
+                    </div>
+                    <div class="pricing">
+                        <h1 class="discount">-20%</h1>
+                        <div class="price">
+                            <h1 class="originalPrice">€ 14.98</h1>
+                            <h1>€ 10.49</h1>
+                        </div>
+                        <button onclick="addToCart()" class="buyBtn">Buy</button>
+                    </div>
+                </div>
+                <div class="gameListing">
+                    <img class="listingImg" src="img/pixel-ninjas-2.png" alt="Pixel Ninjas 2 Game">
+                    <h1 class="gameDesc">Pixel Ninjas 2</h1>
+                    <div class="systemImg">
+                        <img src="img/apple.png" alt="Apple Symbol">
+                        <img src="img/windows.png" alt="Windows Symbol">
+                        <img onclick="linuxAlert()" src="img/linux.png" alt="Linx Symbol">
+                    </div>
+                    <div class="pricing">
+                        <h1 class="discount">-20%</h1>
+                        <div class="price">
+                            <h1 class="originalPrice">€ 14.98</h1>
+                            <h1>€ 10.49</h1>
+                        </div>
+                        <button onclick="addToCart()" class="buyBtn">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <script src="script.js"></script>
+</body>
+
+</html>

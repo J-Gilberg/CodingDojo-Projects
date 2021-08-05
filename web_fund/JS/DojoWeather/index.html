@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navContainer">
+            <div class="navBar">
+                <h1>DojoWeather</h1>
+                <div class="cities">
+                    <h1 onclick="fetchWeather(this.innerText)">Nashville</h1>
+                    <h1 onclick="fetchWeather(this.innerText)">Chicago</h1>
+                    <h1 onclick="fetchWeather(this.innerText)"> Dallas</h1>
+                </div>
+            </div>
+        </div>
+        <div class="tempBar">
+            <h1>San Jose</h1>
+            <div class="metricSelect">
+                <h1>show temperature in</h1>
+                <select name="Metric" id="measurement">
+                    <option value="C">°C</option>
+                    <option value="F">°F</option>
+                </select>
+            </div>
+        </div>
+        <div class="dayList">
+            <div class="dayListing">
+                <h1>Today</h1>
+                <img id="day1img" src="#" alt="Weather Img">
+                <h1 id="day1desc">some rain</h1>
+                <div class="temp">
+                    <h1 id="day1high" class="high">24°</h1>
+                    <h1 id="day1low" class="low">18°</h1>
+                </div>
+            </div>
+            <div class="dayListing">
+                <h1>Tomorrow</h1>
+                <img id="day2img" src="#" alt="Weather Img">
+                <h1 id="day2desc">some rain</h1>
+                <div class="temp">
+                    <h1 id="day2high" class="high">24°</h1>
+                    <h1 id="day2low" class="low">18°</h1>
+                </div>
+            </div>
+            <div class="dayListing">
+                <h1>Sunday</h1>
+                <img id="day3img" src="#" alt="Weather Img">
+                <h1 id="day3desc">some rain</h1>
+                <div class="temp">
+                    <h1 id="day3high" class="high">24°</h1>
+                    <h1 id="day3low" class="low">18°</h1>
+                </div>
+            </div>
+            <div class="dayListing">
+                <h1>Monday</h1>
+                <img id="day4img" src="#" alt="Weather Img">
+                <h1 id="day4desc">some rain</h1>
+                <div class="temp">
+                    <h1 id="day4high" class="high">24°</h1>
+                    <h1 id="day4low" class="low">18°</h1>
+                </div>
+            </div>
+        </div>
+        <div id="cookieBox">
+            <img src="img/cookie.png" alt="Cookie Pic">
+            <div class="cbText">
+                <h1>Stop! Cookie time</h1>
+                <p>We use cookies (sadly not edible ones) to personalize content and ads, to provide social media
+                    features and to analyse our traffic, <a href="#">Read more...</a></p>
+            </div>
+            <button onclick="hide()">I Accept</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>ProfilePage</title>
+</head>
+
+<body>
+    <div class="nav">
+        <ul class="nav-linkbar">
+            <li class="nav-links nav-title">Profile</li>
+            <li class="nav-links"><a class="nav-links" href="#">Home</a></li>
+            <li class="nav-links"><a class="nav-links" href="#" class="nav-profile">My Profile</a></li>
+            <li class="nav-links"><a class="nav-links" href="#">Find Connections</a></li>
+        </ul>
+        <button class="nav-button">Sign Out</button>
+
+    </div>
+    <div class="content">
+        <div class="main">
+            <div class="userCard">
+                <img class="userPic" src="img/userIcon.png" alt="User Image">
+                <div class="textBox">
+                    <p class="userName" onclick="userNameChange(this)" >Jordan Gilberg</p>
+                    <div class="location">
+                        <a href="#"></a><img class="icons" src="img/locationPin.png" alt="Location Pin"></img></a>
+                        <p>Nashville,TN</p>
+                    </div>
+                    <p class="info">Developer | Engineer | Problem Solver | Analyst </p>
+                    <p class="info"> Master of the skys and the Internet!</p>
+                    <a href="#" class="settings"><img class="icons" src="img/settingGear.png" alt="Settings">edit
+                        profile</img></a>
+                </div>
+            </div>
+            <div class="education additionalInfo">
+                <div class="boxHeader">Education</div>
+                <t1>Coding Dojo - Full Stack BootCamp</t1>
+                <t2>July 2021 - Nov 2021</t2>
+                <t3>Triple black belt in Python, Java, and MERN</t3>
+            </div>
+
+        </div>
+        <div class="side">
+            <div class="sideBox">
+                <div class="boxHeader">
+                    <requestCount id="CR">3</requestCount>
+                    Connection Requests
+                </div>
+                <ul class="connections">
+                    <li id="CR1">
+                        <div class="connectionContainer">
+                            <img class="userIconSmall" src="img/userIcon.png" alt="User Icon">
+                            <textPadding>Kanye West</textPadding>
+                        </div>
+                        <div class="connectionContainer">
+                            <button onclick="hide(this.id)" id="CR1A" class="buttonFormat">
+                                <img class="buttonImg" src="img/accept-circle.png" alt="accept">
+                            </button>
+                            <button onclick="hide(this.id)" id="CR1D"class="buttonFormat">
+                                <img class="buttonImg" src="img/close-circle.png" alt="close">
+                            </button>
+                        </div>
+                    </li>
+                    <li id="CR2">
+                        <div class="connectionContainer">
+                            <img class="userIconSmall" src="img/userIcon.png" alt="User Icon">
+                            <textPadding>ACDC</textPadding>
+                        </div>
+                        <div class="connectionContainer">
+                            <button onclick="hide(this.id)" id="CR2A" class="buttonFormat">
+                                <img class="buttonImg" src="img/accept-circle.png" alt="accept">
+                            </button>
+                            <button onclick="hide(this.id)" id="CR2D" class="buttonFormat">
+                                <img class="buttonImg" src="img/close-circle.png" alt="close">
+                            </button>
+                        </div>
+                    </li>
+                    <li id="CR3">
+                        <div class="connectionContainer">
+                            <img class="userIconSmall" src="img/userIcon.png" alt="User Icon">
+                            <textPadding>Black Pumas</textPadding>
+                        </div>
+                        <div class="connectionContainer">
+                            <button onclick="hide(this.id)" id="CR3A" class="buttonFormat">
+                                <img  class="buttonImg" src="img/accept-circle.png" alt="accept">
+                            </button>
+                            <button onclick="hide(this.id)"  id="CR3D" class="buttonFormat">
+                                <img class="buttonImg" src="img/close-circle.png" alt="close">
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="footbar">View More</a>
+            </div>
+            <div class="sideBox">
+                <div class="boxHeader">
+                    <connectionCount id="countCon">410</connectionCount>
+                    Your Connections
+                </div>
+                <ul class="connections">
+                    <li>
+                        <div class="connectionContainer">
+                            <img class="userIconSmall" src="img/userIcon.png" alt="User Icon">
+                            <textPadding>Bob Dylan</textPadding>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="connectionContainer">
+                            <img class="userIconSmall" src="img/userIcon.png" alt="User Icon">
+                            <textPadding>Kid LAROI</textPadding>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="connectionContainer">
+                            <img class="userIconSmall" src="img/userIcon.png" alt="User Icon">
+                            <textPadding>John Mayer</textPadding>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="connectionContainer">
+                            <img class="userIconSmall" src="img/userIcon.png" alt="User Icon">
+                            <textPadding>Mat Kearney</textPadding>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="connectionContainer">
+                            <img class="userIconSmall" src="img/userIcon.png" alt="User Icon">
+                            <textPadding>Childish Gambino</textPadding>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="footbar">View More</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

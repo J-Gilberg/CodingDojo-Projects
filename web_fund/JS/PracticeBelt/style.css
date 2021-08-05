@@ -1,0 +1,184 @@
+*{
+    color: #212529;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Nav */
+.nav *{
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.nav{
+    width: 100%;
+    height: auto;
+    background-color:#212529;
+    display: flex;
+    justify-content: center;
+    border-top: blueviolet solid 7px;
+}
+
+.navContent{
+    justify-content: space-between;
+    width: 70%;
+    height: auto;
+}
+
+.navLinks{
+    justify-content: space-evenly;
+    height: 100%;
+    gap: 20px;
+}
+
+.cart{
+    justify-content: space-evenly;
+}
+
+.navImg{
+    width: 50px;
+    height: auto;
+}
+
+.purpleText{
+    color: blueviolet;
+}
+.currency{
+    height: fit-content;
+    color: #212529;
+}
+
+/* Container */
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70%;
+    height: fit-content;
+}
+
+/* Small Header */
+.contentHeader{
+    width: 100%;
+    justify-content: left;
+}
+
+.contentHeader *{
+    font-size: medium;
+}
+
+/* Banner */
+.imgBanner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    
+    background-color: whitesmoke;
+}
+
+#scrollBanner{
+    height: auto;
+    width: 70%;
+}
+
+.arrow{
+    height: 25%;
+    width: auto;
+}
+
+.arrowFlip{
+    transform: rotate(180deg);
+}
+
+.bannerScroll{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.bannerScroll > div{
+    width: 40px;
+    height: 5px;
+    background-color: darkgrey;
+}
+
+/* Game Listing */
+
+.gameList{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.gameListing{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: whitesmoke;
+}
+
+.listingImg{
+    width:100%;
+}
+
+.gameDesc{
+    font-size: medium;
+}
+
+.systemImg *{
+    width: 30px;
+}
+
+.pricing{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding: 5px 5px;
+    padding-top: 10px;
+}
+
+.discount{
+    font-size: medium;
+    background-color: blueviolet;
+    border: #212529 solid 1px;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.price *{
+    font-size: small;
+    color: grey;
+}
+
+.originalPrice{
+    text-decoration: line-through;
+}
+
+.buyBtn{
+    font-size: medium;
+    background-color: greenyellow;
+    border-radius: 5px;
+    padding: 3px;
+}

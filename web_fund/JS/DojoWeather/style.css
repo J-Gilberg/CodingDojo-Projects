@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.navContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+}
+
+.navBar{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cities{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    width: 50%;
+}
+
+.tempBar{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid black;
+
+}
+
+.metricSelect{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+}
+
+.dayList{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.dayListing{
+    width: 22%;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.temp{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.high{
+    color: red;
+}
+
+.low{
+    color: rgb(0, 0, 255);
+}
+
+#cookieBox{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    width: 70%;
+    border: 2px black solid;
+    
+}
+
+.cbText{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+button{
+    background-color: lightblue;
+    border: 2px black solid;
+    white-space: nowrap;
+    padding: 3px;
+    margin-right: 5px;
+}
