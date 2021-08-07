@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect # added request
+from flask import Flask, render_template, request, redirect, session # added request
 
 app = Flask(__name__)
 # our index route will handle rendering our form
@@ -17,7 +17,31 @@ def create_user():
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+
+    if 'counter1' not in session:
+        session['counter1'] = 0
+    if 'counter1' not in session:
+        session['counter1'] = 0    
+
+    return render_template("index.html") #this renders the page.
+
+
+@app.route('/increment/<int:num>') #can use the url to grab the info in a button. define href:
+def counter(num):
+
+    if num < 1 or num > 2:
+        return redirect('/')
+
+    session[f'counter{num}'] += 1
+    return redirect('/')
+
+@app.route('/reset')
+def reset():
+    session.clear()
+    redirect
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
