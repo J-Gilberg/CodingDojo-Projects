@@ -14,8 +14,14 @@
     <h2>{{session['count']}}</h2>
     <div class="btnCont">
         <a class="leftBtn" href="/add">Add</a>
+        <a class="leftBtn" href="/add2">Add 2</a>
         <a class="rightBtn" href="/reset">Reset</a>
     </div>
+    <form action="/num" method='post'>
+        <label for='i'>Add By:</label>
+        <input type='text' name='i'>
+        <input type='submit' value="Confirm">
+    </form>
 </body>
 
 </html>
