@@ -27,3 +27,11 @@ body{
     justify-content: flex-start;
     align-items: center;
 }
+
+.visitsCont{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 500px;
+}

@@ -27,9 +27,9 @@ def reset():
 
     return redirect('/')
 
-@app.route('/visits', methods=['POST'])
+@app.route('/visits')
 def visits():
-    return render_template('/visits')
+    return render_template('visits.html')
 
 if __name__=="__main__":   
     app.run(debug=True)    
