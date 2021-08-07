@@ -1,0 +1,29 @@
+*{
+    text-align: center;
+}
+
+.btnCont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+}
+
+.leftBtn{
+    background-color: skyblue;
+    width: 50px;
+    padding: 3px;
+}
+
+.rightBtn{
+    background-color: lightcoral;
+    width: 50px;
+    padding: 3px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
