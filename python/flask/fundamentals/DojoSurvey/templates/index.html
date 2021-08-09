@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dojo Survery</title>
+</head>
+<body>
+    <div class="cont">
+        <form class="box" action="/input" method="POST">
+            <label for="name">Your Name:</label>
+            <input class="box" type="text" name="name">
+            <label for="location">User Location: </label>
+            <select class="box" name="location" id="location">
+                <option value="New Bremen">New Bremen</option>
+                <option value="Toledo">Toledo</option>
+                <option value="Cincinnati">Cincinnati</option>
+                <option value="Murfreesboro">Murfreesboro</option>
+            </select>
+            <label for="lang">Favorite Language: </label>
+            <select  class="box" name="lang" id="lang">
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="MERN">MERN</option>
+            </select>
+            <label for="comment">Comment (optional): </label>
+            <textarea class="box" name="comment" id="comment" cols="3" rows="10"></textarea>
+            <input class="btn" type="submit">
+        </form>
+    </div>
+</body>
+</html>
