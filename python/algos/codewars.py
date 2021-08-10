@@ -77,12 +77,130 @@
 # print(is_valid_walk(['w']))
 # print(is_valid_walk(['n','n','n','s','n','s','n','s','n','s']))
 
-def song_decoder(song):
-    output = song.replace("WUB", " ").strip()
-    while output.find("  ") != -1:
-        output = output.replace("  ", " ")
-    return output
+# def song_decoder(song):
+#     output = song.replace("WUB", " ").strip()
+#     while output.find("  ") != -1:
+#         output = output.replace("  ", " ")
+#     return output
 
-print(song_decoder("AWUBBWUBC"))
-print(song_decoder("AWUBWUBWUBWUBBWUBWUBWUBC"))
-print(song_decoder("WUBAWUBBWUBCWUB"))
+# print(song_decoder("AWUBBWUBC"))
+# print(song_decoder("AWUBWUBWUBWUBBWUBWUBWUBC"))
+# print(song_decoder("WUBAWUBBWUBCWUB"))
+
+# def array_diff(a, b):
+#     while(len(b)>0):
+#         i = 0
+#         while i < len(a):
+#             if a[i] == b[0]:
+#                 a.pop(i)   
+#                 i -= 1     
+#             else:
+#                 i += 1
+#         b.pop(0)    
+#     return a
+
+
+# print(array_diff([1,2], [1]))
+# print(array_diff([1,2,2], [1]))
+# print(array_diff([1,2,2], [2]))
+# print(array_diff([1,2,2], []))
+# print(array_diff([], [1,2]))
+# print(array_diff([1,2,3], [1, 2]))
+
+# def unique_in_order(iterable):
+#     output = []
+#     if len(iterable) == 0:
+#         return output
+#     i = 0
+    
+#     ii = iterable[i]
+#     output.append(iterable[i])
+#     while i < len(iterable):
+#         if ii == iterable[i]:
+#             i += 1
+#         else:
+#             ii = iterable[i]
+#             output.append(iterable[i])
+#             i += 1    
+#     return output
+# print(unique_in_order('AAAABBBCCDAABBB'))
+# def persistence(n):
+#     count = 0
+#     while n >= 9:
+#         p = 0
+#         for i in range(0,len(str(n))):
+#             if i == 0:
+#                 p = int(str(n)[i])
+#             else:
+#                 p = p*int(str(n)[i])
+#         n = p
+#         count += 1
+#     return count
+
+# print(persistence(39))
+# print(persistence(4))
+# print(persistence(25))
+# # print(persistence(999))
+
+# def high(x):
+#     s = ''
+#     arr = []
+#     while len(x) > 0:
+#         if x.find(' ') != -1:
+#             ice = slice(0,x.find(' '))
+#             print(ice)
+#             arr.append(x[ice])
+#             x = x.replace(x[ice],'',1)
+#             x = x.replace(x[0],'',1)
+#         else:
+#             arr.append(x)
+#             x = ''
+#     print(arr)
+#     tempSum = 0
+#     resultindex = 0
+#     for i in range(len(arr),0,-1):
+#         sum = 0
+#         for ii in range(len(arr[i-1])):
+#             sum += (ord(arr[i-1][ii])-96)
+#         print(sum)    
+#         if sum >= tempSum:
+#             tempSum = sum
+#             resultindex = i-1
+#     return arr[resultindex]
+
+# print(high('man i need a taxi up to ubud'))
+# print(high('what time are we climbing up the volcano'))
+# print(high('take me to semynak'))
+# print(high('aa b'))
+# print(high('b aa'))
+# print(high('bb d'))
+# print(high('d bb'))
+# print(high("aaa b"))
+# def find_outlier(integers):
+#     count = 0
+#     ii = 0
+#     for i in range(len(integers)):
+#         if integers[i]%2 == 0:
+#             count += 1
+#         else:
+#             count -= 1  
+#         if count >= 2:
+#             while integers[ii]%2 == 0:
+#                 ii += 1
+#             break
+#         if count <= -2:
+#             while integers[ii]%2 != 0:
+#                 ii += 1
+#             break
+#     if count == 1:
+#         while integers[ii]%2 == 0:
+#             ii += 1
+#     if count == -1:
+#         while integers[ii]%2 != 0:
+#             ii += 1
+#     return integers[ii]
+
+# print(find_outlier([1,0,0]))
+# print(find_outlier([2, 4, 6, 8, 10, 3]))
+# print(find_outlier([2, 4, 0, 100, 4, 11, 2602, 36]))
+# print(find_outlier([160, 3, 1719, 19, 11, 13, -21]))
