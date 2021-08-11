@@ -51,6 +51,54 @@ class SinglyLinkedList {
             this.tail = newNode;
         }
     }
+
+    findMinValue(){
+        if (this.head == null && this.tail == null){
+            return undefined;
+        }
+        var runner = this.head;
+        var min = runner;
+        while(runner.next != null){
+            runner = runner.next;
+            if (min.value > runner.value){
+                min = runner;
+            }
+        }     
+        if (min.value > this.tail.value){
+            min = this.tail;
+        }   
+        return min;
+    }
+
+    findMaxValue(){
+        if (this.head == null && this.tail == null){
+            return undefined;
+        }
+        var runner = this.head;
+        var max = runner;
+        while(runner.next != null){
+            runner = runner.next;
+            if (max.value < runner.value){
+                max = runner;
+            }
+        }     
+        if (max.value < this.tail.value){
+            max = this.tail;
+        }   
+        return max;
+    }
+
+    findSecondToLast(){
+        if (this.head == null || this.head == this.tail){
+            return undefined;
+        }
+        
+        var runner = this.head;
+        while(runner.next != this.tail){
+            runner = runner.next;
+        }
+        return runner.value;
+    }
     // contains - returns true if target is in the linked list (as a node value),
     // false otherwise
     contains(target) {
@@ -144,14 +192,20 @@ newSLL.addToFront(13);
 newSLL.addToFront(7);
 newSLL.addToFront(3);
 newSLL.addToBack(14);
+newSLL.addToBack(26);
 
-console.log(newSLL.contains(13));
-console.log(newSLL.contains(99));
+// console.log(newSLL.contains(13));
+// console.log(newSLL.contains(99));
 
+// console.log(newSLL.display());
+// newSLL.removeFront();
+// newSLL.removeBack();
 console.log(newSLL.display());
-newSLL.removeFront();
-newSLL.removeBack();
-console.log(newSLL.display());
 
+console.log(newSLL.findMinValue());
+console.log('')
+console.log(newSLL.findMaxValue());
+console.log('')
+console.log(newSLL.findSecondToLast());
 
-generateNewList(4, 20, 25);
+// generateNewList(4, 20, 25);
