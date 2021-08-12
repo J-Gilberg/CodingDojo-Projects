@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Register</title>
+</head>
+
+<body>
+    {% for i in result %}
+    <h1>Edit User {{i.id}}</h1>
+    <form action="/user/{{i.id}}/edit/editsubmit" method="POST">
+        <label for="first_name">First Name:</label>
+        <input type="text" name='first_name' value={{i.first_name}}>
+        <label for="last_name">Last Name:</label>
+        <input type="text" name='last_name' value={{i.last_name}}>
+        <label for="email">Email:</label>
+        <input type="email" name='email' value={{i.email}}>
+        <input type="submit" value='Update'>
+        <a href="/user/{{i.id}}">Show User</a>
+    </form>
+    {% endfor %}
+</body>
+
+</html>
