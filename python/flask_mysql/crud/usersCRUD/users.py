@@ -35,10 +35,17 @@ class User:
         return results
 
     @classmethod
+    def get_last_user(cls):
+        query = "SELECT * FROM users WHERE id = (SELECT MAX(id) FROM users);"
+        result = connectToMySQL('user_schema').query_db(query)
+        return result
+    
+    @classmethod
     def get_user(cls,data):
         query = "SELECT * FROM users WHERE id = %(id)s ;"
         results = connectToMySQL('user_schema').query_db(query, data)
         return results
+
 
     @classmethod
     def edit_user(cls,data):

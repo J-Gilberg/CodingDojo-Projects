@@ -15,7 +15,11 @@ def add_user():
 def register():
     new_user = {'first_name': request.form['first_name'],'last_name': request.form['last_name'],'email':request.form['email'] }
     User.add_user(new_user)
-    return redirect('/users')
+    last_user = User.get_last_user()
+    print(last_user)
+    i = last_user[0]['id']
+    s = f'/user/{i}'
+    return redirect(s)
 
 @app.route('/users')
 def displayUsers():
