@@ -7,6 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <h1>{author.name} favorites</h1>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th># of pages</th>
+            </tr>
+            {% for book in books%}
+            <tr>
+                <td>{book.title}</td>        
+                <td>{book.num_pages}</td>         
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/home">Home</a>
+    </div>
+    <div>
+        <h1>Add Author's Favorite</h1>
+        <form action="/addauthorfavorite">
+            <select name="book">
+                {% for book in books%}
+                    <option value="{book.id}">{book.title}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Add">
+        </form>
+    </div>
 </body>
 </html>

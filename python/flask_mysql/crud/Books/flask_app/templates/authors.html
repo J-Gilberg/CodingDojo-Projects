@@ -9,7 +9,22 @@
 </head>
 
 <body>
-
+    <div>
+        <h1>New Author</h1>
+        <form action="/addauthor">
+            <label for="name">Name:</label>
+            <input type="text" name="name">
+            <input type="submit" value="Create">
+        </form>
+    </div>
+    <div>
+        <h1>All Authors</h1>
+        <ul>
+            {% for author in authors%}
+                <li><a href="/authorfavorites">{author.name}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 
 </html>

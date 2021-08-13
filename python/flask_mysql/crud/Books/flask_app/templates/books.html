@@ -7,6 +7,24 @@
     <title>Books</title>
 </head>
 <body>
-    
+    <div>
+        <h1>New Books</h1>
+        <form action="/addbook">
+            <label for="title">Title:</label>
+            <input type="text" name="title">
+            <label for="num_pages">Number of pages:</label>
+            <input type="number" name="num_pages">
+            <input type="submit" value="Create">
+        </form>
+        <a href="/home">Home</a>
+    </div>
+    <div>
+        <h1>All Books</h1>
+        <div>
+            {% for book in books%}
+                <a href="/bookfavorites">{book.title}</a>
+            {% endfor %}
+        </div>
+    </div>
 </body>
 </html>
