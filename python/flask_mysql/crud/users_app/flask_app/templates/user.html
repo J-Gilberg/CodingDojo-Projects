@@ -10,15 +10,12 @@
 </head>
 
 <body>
-    {% for i in result %}
-    <h1>User {{i.id}}</h1>
-    <h2>Full Name: {{i.first_name}} {{i.last_name}}</h2>
-    <h2>Email: {{i.email}}</h2>
-    <h2>Created At: {{i.created_at}}</h2>
-    <h2>Updated At: {{i.updated_at}}</h2>
-    <h2><a href="{{i.id}}/edit">Edit</a>|<a href="{{i.id}}/delete">Delete</a></h2>
-    {% endfor %}
-
+    <h1>User {{user.id}}</h1>
+    <h2>Full Name: {{user.first_name}} {{user.last_name}}</h2>
+    <h2>Email: {{user.email}}</h2>
+    <h2>Created At: {{user.created_at}}</h2>
+    <h2>Updated At: {{user.updated_at}}</h2>
+    <h2><a href="{{user.id}}/edit">Edit</a>|<a href="{{user.id}}/delete">Delete</a></h2>
 </body>
 
 </html>

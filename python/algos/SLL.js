@@ -52,7 +52,7 @@ class SinglyLinkedList {
         }
     }
 
-    findMinValue(){
+    findMinNode(){
         if (this.head == null && this.tail == null){
             return undefined;
         }
@@ -70,7 +70,7 @@ class SinglyLinkedList {
         return min;
     }
 
-    findMaxValue(){
+    findMaxNode(){
         if (this.head == null && this.tail == null){
             return undefined;
         }
@@ -152,6 +152,48 @@ class SinglyLinkedList {
         return temp.value;
     }
 
+    moveMaxToBack(){
+        if(this.head == null && this.tail == null){
+            return undefined;
+        }
+        var temp = this.findMaxNode();
+        if(temp != this.tail){
+            if(temp != this.head){
+                var runner = this.head;
+                while(runner.next != temp){
+                    runner = runner.next;
+                }
+                runner.next = temp.next;
+            }else{
+                this.head = this.head.next;
+            }
+            this.tail.next = temp;
+            this.tail = temp;
+            this.tail.next = null;
+        }
+        console.log(this.display())
+    }   
+
+    moveMinToFront(){
+        if(this.head == null && this.tail == null){
+            return undefined;
+        }
+        var temp = this.findMinNode();
+        if(temp != this.head){
+            var runner = this.head;
+            while(runner.next != temp){
+                runner = runner.next;
+            }
+            if(temp == this.tail){
+                this.tail = runner;
+                this.tail.next = null;
+            }else{
+                runner.next = temp.next;
+            }
+            temp.next = this.head;
+            this.head = temp;
+        }
+    }
     // display()
     // return a string with the value of every node from the
     // linked list - like "3 - 7 - 13 - 4 - 8"
@@ -190,7 +232,7 @@ newSLL.addToFront(8);
 newSLL.addToFront(4);
 newSLL.addToFront(13);
 newSLL.addToFront(7);
-newSLL.addToFront(3);
+newSLL.addToFront(10);
 newSLL.addToBack(14);
 newSLL.addToBack(26);
 
@@ -200,12 +242,15 @@ newSLL.addToBack(26);
 // console.log(newSLL.display());
 // newSLL.removeFront();
 // newSLL.removeBack();
+// console.log(newSLL.display());
+
+// console.log(newSLL.findMinNode());
+// console.log('')
+// console.log(newSLL.findMaxNode());
+// console.log('')
+// console.log(newSLL.findSecondToLast());
+console.log(newSLL.moveMaxToBack());
 console.log(newSLL.display());
-
-console.log(newSLL.findMinValue());
-console.log('')
-console.log(newSLL.findMaxValue());
-console.log('')
-console.log(newSLL.findSecondToLast());
-
+console.log(newSLL.moveMinToFront());
+console.log(newSLL.display());
 // generateNewList(4, 20, 25);
