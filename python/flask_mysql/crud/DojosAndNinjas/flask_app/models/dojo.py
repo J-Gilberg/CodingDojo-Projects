@@ -29,9 +29,10 @@ class Dojo:
                     ,'last_name': data['last_name']
                     ,'age': data['age']
                     ,'dojo_id': data['id']
-                    ,'created_at': data['created_at']
-                    ,'updated_at': data['updated_at'] 
+                    ,'created_at': data['ninja.created_at']
+                    ,'updated_at': data['ninja.updated_at'] 
                     }
+                print(new_dojo)
                 new_dojo.ninjas.append(ninja.Ninja(new_ninja))
         return dojos
 

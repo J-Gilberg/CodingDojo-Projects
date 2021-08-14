@@ -8,46 +8,35 @@ class ListNode {
     }
 }
 
-// var x = new ListNode(7);
-
-// var y = new ListNode(17);
-// x.next = y;
-
-// var z = new ListNode(3);
-// y.next = z;
 
 class SinglyLinkedList {
     constructor() {
         this.head = null;
         this.tail = null;
     }
+
     // addToFront - adds a node with the given value to the head of the list
     addToFront(value) {
-
         var newNode = new ListNode(value);
-
         if (this.head == null && this.tail == null) {
             this.head = newNode;
             this.tail = newNode;
         }
-
         else {
             newNode.next = this.head;
             this.head = newNode;
         }
-
     }
+
     // addToBack - adds a node with the given value to the tail of the list
     addToBack(value) {
         var newNode = new ListNode(value);
-
         if (this.head == null && this.tail == null) {
             this.head = newNode;
             this.tail = newNode;
         }
-
         else {
-            this.tail.next = newNode;
+            this.tail.next = newNode;  // 
             this.tail = newNode;
         }
     }
@@ -88,30 +77,62 @@ class SinglyLinkedList {
         return max;
     }
 
+    partition(target){
+        if (this.head == null && this.tail == null){
+            return undefined;
+        }
+        if (this.head == this.tail){
+            return this
+        }
+        var less_than = [];
+        var greater_than = [];
+        var in_between = [];
+        var runner = this.head;
+        while(runner != null){
+            if( runner.value < target){
+                less_than.push(runner);
+            }
+            if(runner.value > target){
+                greater_than.push(runner);
+            }
+            if(runner.value == target){
+                in_between.push(runner);
+            }
+            runner = runner.next;
+        }
+        var final_array = less_than.concat(in_between, greater_than);
+        this.head = final_array[0];
+        this.tail = final_array[final_array.length - 1];
+        for (var i = 0; i < final_array.length ; ++i){
+            final_array[i].next = final_array[i+1];
+        }
+        this.tail.next = null;
+    
+        return this
+    
+    }
+
     findSecondToLast(){
         if (this.head == null || this.head == this.tail){
             return undefined;
         }
-        
         var runner = this.head;
         while(runner.next != this.tail){
             runner = runner.next;
         }
         return runner.value;
     }
+
     // contains - returns true if target is in the linked list (as a node value),
     // false otherwise
     contains(target) {
         var runner = this.head;
-
         while (runner != null) {
-
             if (runner.value == target) {
                 return true;
             }
             runner = runner.next;
         }
-
         return false;
     }
 
@@ -133,14 +154,12 @@ class SinglyLinkedList {
         }
         var runner = this.head;
         var temp = this.tail;
-
         if(this.head == this.tail){
             var temp = this.head;
             this.head = null;
             this.tail = null;
             return temp.value;
         }
-
         var runner = this.head;
         var temp = this.tail;
         while(this.tail != runner.next){
@@ -194,13 +213,10 @@ class SinglyLinkedList {
             this.head = temp;
         }
     }
-    // display()
-    // return a string with the value of every node from the
-    // linked list - like "3 - 7 - 13 - 4 - 8"
+
     display() {
         var runner = this.head;
         var output = '';
-
         while (runner != null) {
             if (runner == this.tail) {
                 output += runner.value;
@@ -210,14 +226,12 @@ class SinglyLinkedList {
             }
             runner = runner.next;
         }
-
         return output;
     }
 }
 
 function generateNewList(length, min_value, max_value){
     var newSLL = new SinglyLinkedList();
-
     for(var i = 0; i < length; ++i){
         newSLL.addToFront(Math.floor(Math.random()*(max_value-min_value))+min_value);
     }
@@ -225,32 +239,5 @@ function generateNewList(length, min_value, max_value){
     return newSLL
 }
 
+var newSLL = new generateNewList(20, 0, 20);
 
-var newSLL = new SinglyLinkedList();
-newSLL.addToBack(27);
-newSLL.addToFront(8);
-newSLL.addToFront(4);
-newSLL.addToFront(13);
-newSLL.addToFront(7);
-newSLL.addToFront(10);
-newSLL.addToBack(14);
-newSLL.addToBack(26);
-
-// console.log(newSLL.contains(13));
-// console.log(newSLL.contains(99));
-
-// console.log(newSLL.display());
-// newSLL.removeFront();
-// newSLL.removeBack();
-// console.log(newSLL.display());
-
-// console.log(newSLL.findMinNode());
-// console.log('')
-// console.log(newSLL.findMaxNode());
-// console.log('')
-// console.log(newSLL.findSecondToLast());
-console.log(newSLL.moveMaxToBack());
-console.log(newSLL.display());
-console.log(newSLL.moveMinToFront());
-console.log(newSLL.display());
-// generateNewList(4, 20, 25);
