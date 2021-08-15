@@ -56,7 +56,7 @@ class User:
             flash("Invalid email address: email is already linked to an account")
             is_valid = False
 
-        if not len(user['password']) >= 8:
+        if not len(user['password']) >= 8 or not len(user['password']) < 255:
             flash("Invalid Password: password must be at least 8 characters")
             is_valid = False
 

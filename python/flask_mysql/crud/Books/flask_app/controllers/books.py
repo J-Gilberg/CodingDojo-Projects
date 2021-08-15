@@ -7,24 +7,24 @@ from flask_app.models.author import Author
 @app.route("/authors")
 def home():
     authors = Author.get_all()
-    return render_template('authors.html', dojos = dojos)
+    return render_template('authors.html')
 
-@app.route("/authors")
-def home():
+@app.route("/authors/<int:author_id>")
+def home(author_id):
+    
 
-    return render_template('authorfavorite.html', dojos = dojos)
+    return render_template('authorfavorite.html')
 
 # books routes
 @app.route("/books")
 def home():
 
-    return render_template('books.html', dojos = dojos)
+    return render_template('books.html')
 
 @app.route("/authors")
 def home():
 
-    return render_template('bookfavorite.html', dojos = dojos)
-
+    return render_template('bookfavorite.html')
 
 # misc redirects
 @app.route('/')
