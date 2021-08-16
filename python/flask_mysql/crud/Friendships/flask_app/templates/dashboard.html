@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends</title>
+</head>
+
+<body>
+    <div>
+        <h1>Friendships</h1>
+        <table>
+            <tr>
+                <th>User</th>
+                <th>Friend</th>
+            </tr>
+            {% for user in users%}
+            <tr>
+                <td>{{user.name}}</td>
+                <td>{{user.friend.name}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div>
+        <div>
+            <h1>Add User</h1>
+            <form action="/adduser" method="POST">
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name">
+                <input type="submit" value="Add User">
+            </form>
+        </div>
+        <div>
+            <h1>Create Firendship</h1>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <form action="/addfriend" method="POST">
+                <label for="user_id">User:</label>
+                <select name="user_id">
+                    {% for friend in friends %}
+                    <option value="{{friend.id}}">{{friend.name}}</option>
+                    {% endfor %}
+                </select>
+                <label for="friend_id">Friend:</label>
+                <select name="friend_id">
+                    {% for friend in friends %}
+                    <option value="{{friend.id}}">{{friend.name}}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Create">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
