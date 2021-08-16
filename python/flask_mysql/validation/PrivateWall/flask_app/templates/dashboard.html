@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <div>
+        <h1>CodingDojo Wall</h1>
+        <h2>Welcome, {{user.first_name}}!</h2>
+        <a href="/logout">Logout</a>
+    </div>
+    <div>
+        <h2>{{message_count}} Message(s) for you</h2>
+        {% for message in Messages %}
+        <div>
+            <h2>{{message.user}} said <span>({{message.time_sent}} ago)</span>:</h2>
+            <h3>{{message.message_text}}</h3>
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+        <h2>Send Messages</h2>
+        {% for user in users %}
+            <div>
+                <h2>{{user.first_name}}</h2>
+                <form action="/sendmessage">
+                    <textarea name="message_text"  cols="10" rows="3"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
