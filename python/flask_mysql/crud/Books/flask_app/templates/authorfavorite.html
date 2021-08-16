@@ -8,27 +8,27 @@
 </head>
 <body>
     <div>
-        <h1>{author.name} favorites</h1>
+        <h1>{{author.name}} favorites</h1>
         <table>
             <tr>
                 <th>Title</th>
                 <th># of pages</th>
             </tr>
-            {% for book in books%}
+            {% for book in author.books%}
             <tr>
-                <td>{book.title}</td>        
-                <td>{book.num_pages}</td>         
+                <td>{{book.title}}</td>        
+                <td>{{book.num_of_pages}}</td>         
             </tr>
             {% endfor %}
         </table>
-        <a href="/home">Home</a>
+        <a href="/">Home</a>
     </div>
     <div>
         <h1>Add Author's Favorite</h1>
-        <form action="/addauthorfavorite">
+        <form action="/addauthorfavorite" method="POST">
             <select name="book">
-                {% for book in books%}
-                    <option value="{book.id}">{book.title}</option>
+                {% for book in booklist%}
+                    <option value="{{book.id}}">{{book.title}}</option>
                 {% endfor %}
             </select>
             <input type="submit" value="Add">

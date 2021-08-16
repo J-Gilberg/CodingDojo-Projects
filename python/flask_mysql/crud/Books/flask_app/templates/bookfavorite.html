@@ -8,21 +8,21 @@
 </head>
 <body>
     <div>
-        <h1>Title: {book.title}</h1>
+        <h1>Title: {{book.title}}</h1>
         <h2>Favorited by:</h2>
         <div>
-            {% for author in authors%}
-                <h2>{author.name}</h2>
+            {% for author in book.authors%}
+                <h2>{{author.name}}</h2>
             {% endfor %}
         </div>
-        <a href="/home">Home</a>
+        <a href="/">Home</a>
     </div>
     <div>
         <h1>Add Book's Favorite</h1>
-        <form action="/addbookfavorite">
+        <form action="/addbookfavorite" method="POST">
             <select name="author">
-                {% for author in authors%}
-                    <option value="{author.id}">{author.name}</option>
+                {% for author in authorlist%}
+                    <option value="{{author.id}}">{{author.name}}</option>
                 {% endfor %}
             </select>
             <input type="submit" value="Add">
