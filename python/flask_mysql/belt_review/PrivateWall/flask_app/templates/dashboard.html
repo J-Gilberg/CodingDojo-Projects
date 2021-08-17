@@ -29,7 +29,6 @@
     </div>
     <div>
         <h2>Send Messages</h2>
-        <h2>you have sent {{total_message_count}} messages so far</h2>
         {% for user in users %}
             {% if user.id != session['user_id'] %}
             <div>

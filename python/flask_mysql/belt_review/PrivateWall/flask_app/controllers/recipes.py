@@ -7,26 +7,20 @@ def dashboard():
     if not 'user_id' in session:
         return redirect('/')
     users = []
-    messages = []
     user_messages = message.Message.get_all_messages()
     print(user_messages[0].messages[0].message_text)
     for m in user_messages:
         if m.id ==session['user_id']:
             user = m
-            total_message_count = len(m.messages)
-            for  mm in m.messages:
-                if mm.deleted != 'Y':
-                    messages.append(mm)
-            message_count = len(messages)
+            messages = m.messages
         else:
             users.append(m)
-    
     if len(user_messages) == 0:
         messages = None
         users = None
         user = session['user_id']
 
-    return render_template('dashboard.html', messages = messages, users = users, user = user, total_message_count = total_message_count, message_count = message_count)
+    return render_template('dashboard.html', messages = messages, users = users, user = user)
 
 @app.route('/sendmessage', methods=['POST'])
 def add_message():
