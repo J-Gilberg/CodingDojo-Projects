@@ -9,12 +9,13 @@ class User:
         self.last_name = data['last_name']
         self.email = data['email']
         self.password = data['password']
+        self.messages = []
         
-
     @classmethod
     def get_by_email(cls,data):
         query = "SELECT * FROM users WHERE email = %(email)s;"
-        result = connectToMySQL("user_schema").query_db(query,data)
+        result = connectToMySQL("private_wall_schema").query_db(query,data)
+        print(result)
         if len(result) < 1:
             return False
         return cls(result[0])
@@ -22,12 +23,7 @@ class User:
     @classmethod
     def save(cls,data):
         query = "INSERT INTO users (email, first_name, last_name, password) VALUES(%(email)s,%(first_name)s,%(last_name)s,%(password)s);"
-        return connectToMySQL("user_schema").query_db(query, data)
-
-    @classmethod
-    def find_email(cls,data):
-        query = "SELECT COUNT(email) count FROM users WHERE email = %(email)s;"
-        return connectToMySQL("user_schema").query_db(query, data)
+        return connectToMySQL("private_wall_schema").query_db(query, data)
 
     @staticmethod
     def validate_user(user):
@@ -52,7 +48,7 @@ class User:
             flash("Invalid email address!")
             is_valid = False
 
-        if  User.find_email(data)[0]['count'] >= 1:
+        if  User.get_by_email(data):
             flash("Invalid email address: email is already linked to an account")
             is_valid = False
 
