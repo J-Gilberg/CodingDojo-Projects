@@ -9,12 +9,15 @@ class User:
         self.last_name = data['last_name']
         self.email = data['email']
         self.password = data['password']
-        self.messages = []
+        self.created_at = data['created_at']
+        self.updated_at = data['updated_at']
+
+    db = 'recipes_schema'
         
     @classmethod
     def get_by_email(cls,data):
         query = "SELECT * FROM users WHERE email = %(email)s;"
-        result = connectToMySQL("private_wall_schema").query_db(query,data)
+        result = connectToMySQL(cls.db).query_db(query,data)
         print(result)
         if len(result) < 1:
             return False
@@ -23,7 +26,7 @@ class User:
     @classmethod
     def save(cls,data):
         query = "INSERT INTO users (email, first_name, last_name, password) VALUES(%(email)s,%(first_name)s,%(last_name)s,%(password)s);"
-        return connectToMySQL("private_wall_schema").query_db(query, data)
+        return connectToMySQL(cls.db).query_db(query, data)
 
     @staticmethod
     def validate_user(user):
