@@ -1,6 +1,6 @@
 from flask_app.config.conn import connectToMySQL
 from flask_app.models import login_reg
-from datetime import date, datetime, timedelta, time
+from datetime import datetime, timedelta
 from flask import flash
 
 class Message:
@@ -12,30 +12,27 @@ class Message:
         self.user_id = data['user_id']
         self.sender_id = data['sender_id']
         self.deleted = data['deleted']
-        self.time_sent = None
+        self.time_sent = data['time_sent']
         self.user = None
     
-    # def calc_time_sent(created_at):
-    #     now = datetime.now()
-    #     f = '%Y-%m-%d %H:%M:%S.%f'
-    #     delta = datetime.strptime(str(now),f) - datetime.strptime(str(created_at),f)
-    #     delta = delta.timetruple()
-    #     for d in range(len(delta)):
-    #         if delta[d] > 0:
-    #             if d == 0:
-    #                 return f'{delta[d]} Year(s)'
-    #             if d == 1:
-    #                 return f'{delta[d]} Month(s)'
-    #             if d == 2:
-    #                 return f'{delta[d]} Day(s)'
-    #             if d == 3:
-    #                 return f'{delta[d]} Hour(s)'
-    #             if d == 4:
-    #                 return f'{delta[d]} Minute(s)'
-    #             if d == 5:
-    #                 return f'{delta[d]} Second(s)'
-    #             if d == 6:
-    #                 return f'{delta[d]} Microsecond(s)'
+    def calc_time_sent(created_at):
+        delta = datetime.now() - created_at
+        print('timedelta')
+        print(delta.seconds//3600)
+        if delta.days//365 > 1:
+            return f'{delta.days//365} Year(s)'
+        if delta.days//30 > 1:
+            return f'{delta.days//30} Month(s)'
+        if delta.days > 1:
+            return f'{delta.days} Day(s)'
+        if int(delta.seconds//3600) > 1:
+            return f'{delta.seconds//3600} Hour(s)'
+
+        if delta.seconds//60 > 1:
+            return f'{delta.seconds//60} Minute(s)'
+
+        if delta.seconds > 1:
+            return f'{delta.seconds} Second(s)'
 
     @classmethod
     def add_message(cls, data):
@@ -63,6 +60,20 @@ class Message:
                     ,'password': None
                 }
 
+                delta = datetime.now() - data['m.created_at']
+                if delta.days//365 > 1:
+                    time_sent = f'{delta.days//365} Year(s)'
+                elif delta.days//30 > 1:
+                    time_sent = f'{delta.days//30} Month(s)'
+                elif delta.days > 1:
+                    time_sent = f'{delta.days} Day(s)'
+                elif int(delta.seconds//3600) > 1:
+                    time_sent = f'{delta.seconds//3600} Hour(s)'
+                elif delta.seconds//60 > 1:
+                    time_sent = f'{delta.seconds//60} Minute(s)'
+                elif delta.seconds > 1:
+                    time_sent = f'{delta.seconds} Second(s)'
+
                 new_message = {
                     'id': data['m.id']
                     ,'message_text': data['message_text']
@@ -71,7 +82,7 @@ class Message:
                     ,'user_id': data['user_id']
                     ,'sender_id': data['sender_id']
                     ,'deleted': data['deleted']
-                    ,'time_sent': None #Message.calc_time_sent(data['m.created_at'])
+                    ,'time_sent': time_sent
                 }
                 m = Message(new_message)
                 m.user = login_reg.User(new_sender)

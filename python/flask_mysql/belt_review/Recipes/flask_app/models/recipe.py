@@ -48,7 +48,7 @@ class Recipe:
         if len(data['instructions']) > 500:
             flash('please provide instructions less than or equal to 500 characters')
             is_valid = False
-        if len(data['under_thirty']) != 1:
+        if  data['under_thirty'] != 'Y' or data['under_thirty'] != 'N':
             flash('invalid input for under 30 minutes, must select Yes or No')
             is_valid = False
         return is_valid
