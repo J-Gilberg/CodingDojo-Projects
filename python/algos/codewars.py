@@ -204,3 +204,34 @@
 # print(find_outlier([2, 4, 6, 8, 10, 3]))
 # print(find_outlier([2, 4, 0, 100, 4, 11, 2602, 36]))
 # print(find_outlier([160, 3, 1719, 19, 11, 13, -21]))
+
+# def rgb(r, g, b):
+#     output = ''
+#     charaters = ('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F')
+#     if r > 255: output = 'FF'
+#     elif r < 0: output = '00'
+#     else: output = f'{output}{charaters[r//16]}{charaters[r%16]}'
+#     if g > 255: output = f'{output}FF'
+#     elif g < 0: output = f'{output}00'
+#     else: output = f'{output}{charaters[g//16]}{charaters[g%16]}'
+#     if b > 255: output = f'{output}FF'
+#     elif b < 0: output = f'{output}00'
+#     else: output = f'{output}{charaters[b//16]}{charaters[b%16]}'
+#     return output
+
+# print(rgb(0,0,0))
+# print(rgb(1,2,3))
+# print(rgb(255,255,255))
+# print(rgb(254,253,252))
+# print(rgb(-20,275,125))
+
+
+def pig_it(text):
+    f = text
+    text.appendtext[0]
+
+print(pig_it('Pig latin is cool')
+print(pig_it('This is my string')
+
+# pig_it('Pig latin is cool') # igPay atinlay siay oolcay
+# pig_it('Hello world !')     # elloHay orldway !
