@@ -21,7 +21,7 @@
 #         if i == 'x':
 #             count += 1
 #         if i == 'o':
-#             count -= 1    
+#             count -= 1
 #     if count == 0:
 #         return True
 #     return False
@@ -46,7 +46,7 @@
 #         jj = text.find('_') # 3
 #         if((jj < j and jj != -1) or j == -1):
 #             i = jj
-#         else:    
+#         else:
 #             i = j
 #         sly = slice(0, i)
 #         # print(text[sly].title())
@@ -58,7 +58,7 @@
 #         s[0] = s[0].lower()
 
 #     for e in range(0,len(s)):
-#         output += s[e] 
+#         output += s[e]
 #     return output
 
 # print(to_camel_case(''))
@@ -92,11 +92,11 @@
 #         i = 0
 #         while i < len(a):
 #             if a[i] == b[0]:
-#                 a.pop(i)   
-#                 i -= 1     
+#                 a.pop(i)
+#                 i -= 1
 #             else:
 #                 i += 1
-#         b.pop(0)    
+#         b.pop(0)
 #     return a
 
 
@@ -112,7 +112,7 @@
 #     if len(iterable) == 0:
 #         return output
 #     i = 0
-    
+
 #     ii = iterable[i]
 #     output.append(iterable[i])
 #     while i < len(iterable):
@@ -121,7 +121,7 @@
 #         else:
 #             ii = iterable[i]
 #             output.append(iterable[i])
-#             i += 1    
+#             i += 1
 #     return output
 # print(unique_in_order('AAAABBBCCDAABBB'))
 # def persistence(n):
@@ -162,7 +162,7 @@
 #         sum = 0
 #         for ii in range(len(arr[i-1])):
 #             sum += (ord(arr[i-1][ii])-96)
-#         print(sum)    
+#         print(sum)
 #         if sum >= tempSum:
 #             tempSum = sum
 #             resultindex = i-1
@@ -183,7 +183,7 @@
 #         if integers[i]%2 == 0:
 #             count += 1
 #         else:
-#             count -= 1  
+#             count -= 1
 #         if count >= 2:
 #             while integers[ii]%2 == 0:
 #                 ii += 1
@@ -226,12 +226,33 @@
 # print(rgb(-20,275,125))
 
 
-def pig_it(text):
-    f = text
-    text.appendtext[0]
+# def pig_it(text):
+#     f = text
+#     text.appendtext[0]
 
-print(pig_it('Pig latin is cool')
-print(pig_it('This is my string')
+# print(pig_it('Pig latin is cool')
+# print(pig_it('This is my string')
 
-# pig_it('Pig latin is cool') # igPay atinlay siay oolcay
-# pig_it('Hello world !')     # elloHay orldway !
+# # pig_it('Pig latin is cool') # igPay atinlay siay oolcay
+# # pig_it('Hello world !')     # elloHay orldway !
+
+
+def move_zeros(array):
+    if len(array) == 0:
+        return array
+    count = array.count(0)
+    while array.count(0):
+        array.remove(0)
+    zeros = [0] * count
+    array.extend(zeros)
+    return array
+
+
+def youarecute():
+    print(move_zeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]))
+    print(move_zeros([9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9]))
+    print(move_zeros([0, 0]))
+    print(move_zeros([0]))
+    print(move_zeros([]))
+
+youarecute()
