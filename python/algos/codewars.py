@@ -237,22 +237,38 @@
 # # pig_it('Hello world !')     # elloHay orldway !
 
 
-def move_zeros(array):
-    if len(array) == 0:
-        return array
-    count = array.count(0)
-    while array.count(0):
-        array.remove(0)
-    zeros = [0] * count
-    array.extend(zeros)
-    return array
+# def move_zeros(array):
+#     if len(array) == 0:
+#         return array
+#     count = array.count(0)
+#     while array.count(0):
+#         array.remove(0)
+#     zeros = [0] * count
+#     array.extend(zeros)
+#     return array
 
 
-def youarecute():
-    print(move_zeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]))
-    print(move_zeros([9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9]))
-    print(move_zeros([0, 0]))
-    print(move_zeros([0]))
-    print(move_zeros([]))
+# def youarecute():
+#     print(move_zeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]))
+#     print(move_zeros([9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9]))
+#     print(move_zeros([0, 0]))
+#     print(move_zeros([0]))
+#     print(move_zeros([]))
 
-youarecute()
+# youarecute()
+
+def solution(string,markers):
+    string_list = string.splitlines()
+    output = []
+    for m in markers:
+        for i in range(len(string_list)):
+            find_marker = string_list[i].find(m)
+            if find_marker != -1:
+                string_list[i] = string_list[i].replace(string_list[i][find_marker : len(string_list[i])],"")
+                string_list[i] = string_list[i].strip()
+    output = "\n".join(string_list)
+    print(output)
+    return output
+solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
+# "apples, pears\ngrapes\nbananas")
+solution("a #b\nc\nd $e f g", ["#", "$"])
