@@ -252,23 +252,53 @@
 #     print(move_zeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]))
 #     print(move_zeros([9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9]))
 #     print(move_zeros([0, 0]))
-#     print(move_zeros([0]))
-#     print(move_zeros([]))
+# #     print(move_zeros([0]))
+# #     print(move_zeros([]))
 
-# youarecute()
+# # youarecute()
 
-def solution(string,markers):
-    string_list = string.splitlines()
-    output = []
-    for m in markers:
-        for i in range(len(string_list)):
-            find_marker = string_list[i].find(m)
-            if find_marker != -1:
-                string_list[i] = string_list[i].replace(string_list[i][find_marker : len(string_list[i])],"")
-                string_list[i] = string_list[i].strip()
-    output = "\n".join(string_list)
-    print(output)
-    return output
-solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
-# "apples, pears\ngrapes\nbananas")
-solution("a #b\nc\nd $e f g", ["#", "$"])
+# def solution(string,markers):
+#     string_list = string.splitlines()
+#     output = []
+#     for m in markers:
+#         for i in range(len(string_list)):
+#             find_marker = string_list[i].find(m)
+#             if find_marker != -1:
+#                 string_list[i] = string_list[i].replace(string_list[i][find_marker : len(string_list[i])],"")
+#                 string_list[i] = string_list[i].strip()
+#     output = "\n".join(string_list)
+#     print(output)
+#     return output
+# solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
+# # "apples, pears\ngrapes\nbananas")
+# solution("a #b\nc\nd $e f g", ["#", "$"])
+
+def mix(s1, s2):
+    char_counts1 = {}
+    char_counts2 = {}
+    char_counts_compared = {}
+    for i in s1:
+        if not i.isupper():
+            if i not in char_counts1:
+                char_counts1[i] = s1.count(i)
+
+    for i in s2:
+        if not i.isupper():
+            if i not in char_counts2:
+                char_counts2[i] = s2.count(i)
+
+        sub_strings = []
+    for i in char_counts_compared:
+        sub_strings.append(":".join((i,char_counts2.get(i)*i)))
+    return "/".join(sub_strings)
+
+    # elif char_counts2[i] < s2.count(i):
+    #     char_counts2[i] = s2.count(i)
+
+print(mix("Are they here", "yes, they are here"))
+print(mix("Sadus:cpms>orqn3zecwGvnznSgacs","MynwdKizfd$lvse+gnbaGydxyXzayp"))
+print(mix("looping is fun but dangerous", "less dangerous than coding"))
+print(mix(" In many languages", " there's a pair of functions"))
+print(mix("Lords of the Fallen", "gamekult"))
+print(mix("codewars", "codewars"), "")
+print(mix("A generation must confront the looming ", "codewarrs"))
