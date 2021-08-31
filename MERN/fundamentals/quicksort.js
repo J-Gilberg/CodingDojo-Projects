@@ -27,16 +27,10 @@ const quickSort = (i,j) => {
         if(arr[j]>arr[p]){
             --j}
         if(arr[i]>=arr[p] && arr[j]<=arr[p]){
-            temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+            [arr[i], arr[j]] = [arr[j], arr[i]]
         }
     }
     console.log(arr);
-    // console.log(`i = ${i}`);
-    // console.log(`arr[i] = ${arr[i]}`)
-    // console.log(`j = ${j}`);
-    // console.log(`arr[j] = ${arr[j]}`)
     if(start != j){
         quickSort(start,j-1)
     }
@@ -44,8 +38,6 @@ const quickSort = (i,j) => {
         quickSort(i+1,end)
     }
 };
-// console.log(`i = ${i}`);
-// console.log(`j = ${j}`);
 quickSort(i,j);
 console.log(arr);
 
