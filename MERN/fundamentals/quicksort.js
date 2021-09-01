@@ -15,9 +15,10 @@ var arr = [25, 3, 5, 4, 8, 30, 20, 17, 7];
 var i = 0;
 var j = arr.length-1;
 var n = arr.length
-
+var treecount = 0;
 const quickSort = (i,j) => {
     let p = Math.floor(Math.random() * (j-(i+1)))+i;
+    if (treecount === 0 && )
     console.log(`arr[p] = ${arr[p]}`)
     let start = i;
     let end = j;
@@ -39,6 +40,7 @@ const quickSort = (i,j) => {
     }
 };
 quickSort(i,j);
+console.log(treecount);
 console.log(arr);
 
 
