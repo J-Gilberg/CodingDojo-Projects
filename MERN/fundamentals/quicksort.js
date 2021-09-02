@@ -6,29 +6,27 @@
 // // For this array, the pivot is the value 8.
 // // Notice that the values are not sorted, but everything to the left of 8 is smaller than 8. 
 // // Everything to the right is larger than 8.
-// // [1, 4, 2, 7, 6, 3, 8, 20, 9, 15, 12, 10, 30 ] 
-
-var arr = [25, 3, 5, 4, 8, 30, 20, 17, 7];
-
+// //  
+// [25, 3, 5, 4, 8, 30, 20, 17, 7,9, 10, 100];
+// [1, 4, 2, 7, 6, 3, 8, 20, 9, 15, 12, 10, 30 ]
+var arr = [1, 4, 2, 7, 6, 3, 8, 20, 9, 15, 12, 10, 30 ];
 // var pivot = arr => Math.ceil(Math.random() * arr.length)-1;
 // var p = pivot(arr);
 var i = 0;
 var j = arr.length-1;
-var n = arr.length
-var treecount = 0;
 const quickSort = (i,j) => {
-    let p = Math.floor(Math.random() * (j-(i+1)))+i;
-    if (treecount === 0 && )
-    console.log(`arr[p] = ${arr[p]}`)
+    let p = Math.floor(Math.random() * (j-i))+i;
+    console.log(`pivot value = ${arr[p]}`)
     let start = i;
     let end = j;
-    while(i<j){
-        if (arr[i]<arr[p]){
+    let pivot = arr[p]
+    while(i!=j){
+        if (arr[i]<pivot){
             ++i}
-        if(arr[j]>arr[p]){
+        if(arr[j]>pivot){
             --j}
-        if(arr[i]>=arr[p] && arr[j]<=arr[p]){
-            [arr[i], arr[j]] = [arr[j], arr[i]]
+        if(arr[i]>=pivot && arr[j]<=pivot){
+            [arr[i], arr[j]] = [arr[j], arr[i]];
         }
     }
     console.log(arr);
@@ -40,10 +38,15 @@ const quickSort = (i,j) => {
     }
 };
 quickSort(i,j);
-console.log(treecount);
 console.log(arr);
 
+// const partition = (arr) => {
+//     var i = 0;
+//     var j = arr.length-1;
+//     quickSort(i,j)
 
+    
+// }
 // //looping through the array from 0 to arr.length,
 // //shift a value in the array back to the place it belongs
 // //the value to shift should increment with each loop iteration
