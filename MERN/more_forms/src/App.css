@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  background-color: darkkhaki;
+  color: indigo;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
