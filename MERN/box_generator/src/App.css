@@ -1,0 +1,34 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  max-width: 625px;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.boxes{
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+  border: 1px solid black;
+  gap: 5px;
+  flex-wrap:wrap;
+}
+
+/* .box{
+  di
+
+} */
