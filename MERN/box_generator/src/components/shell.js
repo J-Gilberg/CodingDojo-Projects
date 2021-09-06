@@ -5,9 +5,9 @@ const Shell = (props) =>{
     const colorHandler = (event) =>{
         event.preventDefault();
         if(colorCheck(event.target[0].value)){
-        props.onNewBox({[event.target[0].name]: event.target[0].value, 
-            [event.target[1].name]: event.target[1].value, 
-            [event.target[2].name]: event.target[2].value})
+            props.theyWantAnotherBox({[event.target[0].name]: event.target[0].value, 
+                [event.target[1].name]: event.target[1].value, 
+                [event.target[2].name]: event.target[2].value})
         }
         clearForm();
     }

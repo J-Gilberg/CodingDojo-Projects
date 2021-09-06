@@ -19,10 +19,6 @@ function App() {
           return <Box box={singleBox}/>
         }))
       }
-
-
-
-        
       </div>
     </div>
   );
