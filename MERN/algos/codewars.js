@@ -105,25 +105,44 @@
 // console.log(solution(10));
 
 
-// function cakes(recipe, available) {
-//     let toMake = [];
-//     let recipeKeys = Object.keys(recipe);
-//     let availKeys = Object.keys(available);
-//     recipeKeys.map((key)=>{
-//         console.log(key);
-//         console.log(!availKeys.includes(key));
-//         if(!availKeys.includes(key)){
-//             return toMake.push(0);
-//         }
-//         return toMake.push(Math.floor(available[key]/recipe[key]));
-//     });
-//     console.log(toMake)
-//     return Math.min(...toMake);
+function cakes(recipe, available) {
+    let toMake = [];
+    let recipeKeys = Object.keys(recipe);
+    let availKeys = Object.keys(available);
+    for(var = i; i < ;++irecipeKeys.map((key)=>{
+        // console.log(key);
+        // console.log(!availKeys.includes(key));
+        if(!availKeys.includes(key)){
+            return toMake.push(0);
+        }
+        return toMake.push(Math.floor(available[key]/recipe[key]));
+    });
+    console.log(toMake)
+    return Math.min(...toMake);
+}
+
+
+console.log(cakes({flour: 500, sugar: 200, eggs: 1},
+    {flour: 1200, sugar: 1200, eggs: 5, milk: 200}));
+
+console.log(cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100},
+    {sugar: 500, flour: 2000, milk: 2000}));
+
+// function mix(s1, s2) {
+//     s1Formated = s1.replace(/[&\/\\#,+()$~%. '":*?<>{}]/g, '').toUpperCase();
+//     s2Formated = s2.replace(/[&\/\\#,+()$~%. '":*?<>{}]/g, '').toUpperCase();
+
 // }
 
 
-// console.log(cakes({flour: 500, sugar: 200, eggs: 1},
-//     {flour: 1200, sugar: 1200, eggs: 5, milk: 200}));
+// one = "my&friend&Paul has heavy hats! &"
+// two = "my friend John has many many friends &"
+// mix(one, two)-- > "2:nnnnn/1:aaaa/1:hhh/2:mmm/2:yyy/2:dd/2:ff/2:ii/2:rr/=:ee/=:ss"
 
-// console.log(cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100},
-//     {sugar: 500, flour: 2000, milk: 2000}));
+// one = "mmmmm m nnnnn y&friend&Paul has heavy hats! &"
+// two = "my frie n d Joh n has ma n y ma n y frie n ds n&"
+// mix(one, two)-- > "1:mmmmmm/=:nnnnnn/1:aaaa/1:hhh/2:yyy/2:dd/2:ff/2:ii/2:rr/=:ee/=:ss"
+
+// one = "Are the kids at home? aaaaa fffff"
+// two = "Yes they are here! aaaaa fffff"
+// mix(one, two)-- > "=:aaaaaa/2:eeeee/=:fffff/1:tt/2:rr/=:hh"
