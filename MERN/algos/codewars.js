@@ -109,14 +109,14 @@ function cakes(recipe, available) {
     let toMake = [];
     let recipeKeys = Object.keys(recipe);
     let availKeys = Object.keys(available);
-    for(var = i; i < ;++irecipeKeys.map((key)=>{
+    for(var i = 0; i < recipeKeys.length ;++i){
         // console.log(key);
         // console.log(!availKeys.includes(key));
-        if(!availKeys.includes(key)){
+        if(!availKeys.includes(availKeys[i])){
             return toMake.push(0);
         }
-        return toMake.push(Math.floor(available[key]/recipe[key]));
-    });
+        return toMake.push(Math.floor(available[availKeys[i]]/recipe[availKeys[i]]));
+    };
     console.log(toMake)
     return Math.min(...toMake);
 }
