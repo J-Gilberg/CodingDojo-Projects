@@ -22,7 +22,6 @@ module.exports.createJoke = (req, res) => {
     Jokes.create(req.body)
         .then(cJoke => res.json({ results: cJoke }))
         .catch(err => res.json({ message: "could not create the new joke", err }));
-
 }
 
 module.exports.deleteJoke = (req, res) => {
