@@ -29,9 +29,21 @@ class Company {
 }
 
 
-app.get("/api", (req, res) => {
+app.get("/api/user/company", (req, res) => {
     res.json({ 
         company: new Company(),
+        user: new User()
+    });
+});
+
+app.get("/api/companies/new", (req, res) => {
+    res.json({ 
+        company: new Company(),
+    });
+});
+
+app.get("/api/users/new", (req, res) => {
+    res.json({ 
         user: new User()
     });
 });
