@@ -43,33 +43,4 @@ module.exports.addJokeParam = (req, res) => {
     Jokes.updateOne({ _id: req.params._id },req.body,{ new: true, runValidators: true })
         .then(addParam => res.json({ results: addParam }))
         .catch(err => res.json({ message: "could not add param to the new joke", err }));
-        //{push:}
 }
-
-// module.exports.createNewUser = (req, res) => {
-//     Jokes.create(req.body)
-//         .then(newlyCreatedUser => res.json({ user: newlyCreatedUser }))
-//         .catch(err => res.json({ message: 'Something went wrong', error: err }));
-// }
-
-// module.exports.updateExistingUser = (req, res) => {
-//     Jokes.findOneAndUpdate(
-//         { _id: req.params.id },
-//         req.body,
-//         { new: true, runValidators: true }
-//     )
-//         .then(updatedUser => res.json({ user: updatedUser }))
-//         .catch(err => res.json({ message: 'Something went wrong', error: err }));
-// }
-
-// module.exports.deleteAnExistingUser = (req, res) => {
-//     Jokes.deleteOne({ _id: req.params.id })
-//         .then(result => res.json({ result: result }))
-//         .catch(err => res.json({ message: 'Something went wrong', error: err }));
-// }
-
-// module.exports.findOneSingleUser = (req, res) => {
-//     Jokes.findOne({ _id: req.params.id })
-//         .then(oneSingleUser => res.json({ user: oneSingleUser }))
-//         .catch(err => res.json({ message: 'Something went wrong', error: err }));
-// }
