@@ -1,0 +1,9 @@
+GET https://pokeapi.co/api/v2/pokemon/growlithe
+
+GET https://pokeapi.co/api/v2/pokemon/eevee
+
+GET https://pokeapi.co/api/v2/pokemon/squirtle
+
+GET https://pokeapi.co/api/v2/pokemon/charmander
+
+GET https://pokeapi.co/api/v2/pokemon/bulbasaur
