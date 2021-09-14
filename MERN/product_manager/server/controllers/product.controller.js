@@ -1,6 +1,5 @@
 const { Product } = require('../models/product.model');
 
-
 module.exports.newProduct = (req, res) => {
     const { title, price, desc } = req.body;
     Product.create({
@@ -12,9 +11,22 @@ module.exports.newProduct = (req, res) => {
         .catch(err => res.json({message:'failed to create as new product',err}));
 }
 
-
 module.exports.getAllProducts = (req, res) => {
     Product.find({})
-        .then(product => res.json(product))
+        .then(products => res.json({results: products}))
         .catch(err => res.json({message:'failed to get all the products',err}));
+}
+
+module.exports.getOneProduct = (req, res) => {
+    Product.findOne({_id: req.params._id})
+        .then(product => res.json({results: product}))
+        .catch(err => res.json({message:'failed to get the product',err}));
+}
+
+
+
+module.exports.deleteProductByName = (req, res) => {
+    Product.deleteMany({title: req.params.title})
+        .then(products => res.json({results: products}))
+        .catch(err => res.json({message:'failed to delete the products',err}));
 }
