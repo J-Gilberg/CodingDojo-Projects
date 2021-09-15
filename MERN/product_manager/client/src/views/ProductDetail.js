@@ -10,10 +10,10 @@ export default () => {
     useEffect(() => {
         axios.get(`http://localhost:8000/api/products/${_id}`)
             .then(res => setProduct(res.data.results))
-    }, [product]);
+    }, [product, _id]);
 
     return (
-        <div>
+        <div className="container">
             <h1>Buy this now!!</h1>
             <h2>Title: {product.title}</h2>
             <h2>Price: {product.price}</h2>

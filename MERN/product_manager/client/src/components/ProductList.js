@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
-export default () => {
+import { PromiseProvider } from 'mongoose';
+export default (props) => {
 
-    const [productList, setProductList] = useState([]);
     const history = useHistory();
-
-    useEffect(() => {
-        axios.get("http://localhost:8000/api/products/all")
-            .then(res => setProductList(res.data.results))
-    }, [productList]);
 
     const onClickHandler = (e) => {
         e.preventDefault();
@@ -18,13 +13,15 @@ export default () => {
     }
 
     return (
-        <div>
+        <div className="list">
             <h1>All Products</h1>
             {
-                productList.map((product, i) => {
+                props.productList.map((product, i) => {
                     return (
                         <div>
                             <a onClick={onClickHandler} id={product._id}>{product.title}</a>
+                            <button onClick={()=>props.setDaProductID("edit",product._id)}>Edit</button>
+                            <button onClick={()=>props.setDaProductID("delete",product._id)}>Delete</button>
                         </div>
                     )
                 })
