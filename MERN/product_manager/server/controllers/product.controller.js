@@ -25,7 +25,7 @@ module.exports.getOneProduct = (req, res) => {
 
 module.exports.editProduct = (req, res) => {
     // const { title, price, desc } = req.body;
-    Product.updateOne({ _id: req.params._id },req.body)
+    Product.updateOne({ _id: req.params._id },req.body, {runValidators: true})
         .then(product => res.json({results: product}))
         .catch(err => res.json({message:'failed to edit the product',err}));
 }

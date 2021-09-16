@@ -1,13 +1,15 @@
 import './App.css';
 import React from 'react';
 import Main from './views/Main';
-import ProductDetail from './views/ProductDetail';
+import AuthorEdit from './views/AuthorEdit';
+import AuthorNew from './views/AuthorNew.'
 import {
   BrowserRouter,
   Switch,
   Route,
   // Link
 } from "react-router-dom";
+
 function App() {
   return (
     <BrowserRouter>
@@ -15,11 +17,15 @@ function App() {
         <Route exact path="/">
           <Main />
         </Route>
-        <Route path="/products/:_id">
-          <ProductDetail />
+        <Route exact path="/authors/new">
+          <AuthorNew />
+        </Route>
+        <Route exact path="/authors/:_id">
+          <AuthorEdit />
         </Route>
       </Switch>
     </BrowserRouter>
   );
 }
+
 export default App;

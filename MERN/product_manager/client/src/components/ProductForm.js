@@ -25,10 +25,8 @@ export default (props) => {
         <form onSubmit={onSubmitHandler} className="container">
             <label>Title</label>
             <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} /><br />
-
             <label>Price</label>
             <input type="text" onChange={(e) => setPrice(e.target.value)} value={price} /><br />
-
             <label>Description</label>
             <input type="text" onChange={(e) => setDesc(e.target.value)} value={desc} /><br />
             <input type="submit" value='Create' />
