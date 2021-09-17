@@ -97,7 +97,7 @@ const PirateNew = (props) => {
             </div>
             <form onSubmit={onSubmitHandler}>
                 <div>
-                    <span>{error.name && error.name.message}</span><br />
+                    <span>{error.name && error.name.message}</span><span>{!error.name && name.length < 2 && name.length >= 1 && 'Name must be at least two characters long'}</span><br />
                     <label htmlFor="name">Pirate Name:</label><br />
                     <input name="name" type="text" onChange={(e) => setName(e.target.value)} value={name} /><br />
 
@@ -109,7 +109,7 @@ const PirateNew = (props) => {
                     <label htmlFor="numChests"># of Treasure Chests:</label><br />
                     <input name="numChests" type="number" onChange={(e) => setNumChests(e.target.value)} value={numChests} /><br />
 
-                    <span>{error.catchPhrase && error.catchPhrase.message}</span><br />
+                    <span>{error.catchPhrase && error.catchPhrase.message}</span><span>{!error.catchPhrase && catchPhrase.length < 2 && catchPhrase.length >= 1 && 'Catch Phrase must be at least three characters long'}</span><br />
                     <label htmlFor="catchPhrase">Pirate Catch Phrase:</label><br />
                     <input name="catchPhrase" type="text" onChange={(e) => setCatchPhrase(e.target.value)} value={catchPhrase} /><br />
                 </div>

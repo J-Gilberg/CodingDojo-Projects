@@ -4,7 +4,7 @@ const PirateCrewSchema = new mongoose.Schema({
     name: {
         type: String
         , required: [true, "Name is required"]
-        , minlength: [3, "Name must be at least 3 characters long"]
+        , minlength: [2, "Name must be at least 2 characters long"]
         , maxlength: [40, "Name must be at less than 40 characters"]
     }
     ,image:{
