@@ -17,3 +17,12 @@
   flex-direction: column;
 }
 
+.imgLarge{
+  height: 300px;
+  width: 300px
+}
+
+.imgSmall{
+  height: 150px;
+  width: 150px
+}

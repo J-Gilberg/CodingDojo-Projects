@@ -53,7 +53,7 @@ const PirateView = (props) => {
             </div>
             <div>
                 <div>
-                    <img src={sailor.image} alt={`${sailor.name} picture`} />
+                    <img src={sailor.image} alt={`${sailor.name} picture`} className='imgLarge'/>
                     <h1>{sailor.catchPhrase}</h1>
                 </div>
                 <div>

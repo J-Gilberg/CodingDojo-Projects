@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import axios from 'axios';
 
+
 const PirateNew = (props) => {
 
     const [name, setName] = useState('');
@@ -20,8 +21,6 @@ const PirateNew = (props) => {
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        var CaptainCheck = thereBeACaptain;
-        console.log(CaptainCheck);
         console.log(crewPosition);
         if (crewPosition === 'Captain') {
             console.log("captain validation")
@@ -29,12 +28,10 @@ const PirateNew = (props) => {
                 .then(res => {
                     console.log("results");
                     console.log(res.data);
-                    if (res.data.results) {
+                    if (res.data.results !== null) {
                         console.log("captain found")
                         setThereBeACaptain(true);
-                        CaptainCheck = true
                     } else {
-                        console.log(res.data.err.errors);
                         console.log("We have a new Captain")
                         setThereBeACaptain(false);
                         axios.post('http://localhost:8000/api/pirates/new', {
@@ -48,7 +45,7 @@ const PirateNew = (props) => {
                             , crewPosition: crewPosition
                         })
                             .then(res => {
-                                console.log("results");
+                                console.log("results here");
                                 console.log(res.data);
                                 if (res.data.results) {
                                     history.push('/pirates');

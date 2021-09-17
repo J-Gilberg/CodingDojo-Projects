@@ -34,7 +34,7 @@ const Main = (props) =>{
                     crew.map((sailor)=>{
                             return(
                                 <div>
-                                    <img src={sailor.image} alt={`${sailor.name} picture`} />
+                                    <img src={sailor.image} alt={`${sailor.name} picture`} className='imgSmall' />
                                     <div>
                                         <h2>{sailor.name}</h2>
                                         <div>
