@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import Main from './views/Main';
 import AuthorEdit from './views/AuthorEdit';
-import AuthorNew from './views/AuthorNew.'
+import AuthorNew from './views/AuthorNew'
 import {
   BrowserRouter,
   Switch,

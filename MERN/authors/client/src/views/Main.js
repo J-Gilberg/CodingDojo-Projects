@@ -8,9 +8,11 @@ export default (props) => {
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/authors/all')
-            .then(res => setAuthorList(res.data.results))
+            .then(res => {
+                console.log(res.data.results);
+                setAuthorList(res.data.results);})
             .catch(err => console.log(err))
-    }, [authorList])
+    }, [])
 
     const handleDelete = (authorId) => {
         axios.delete(`http://localhost:8000/api/authors/${authorId}/delete`)

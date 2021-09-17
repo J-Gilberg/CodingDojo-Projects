@@ -3,22 +3,23 @@ import { useHistory } from "react-router"
 
 export default (props) => {
 
-    const [name, setName] = useState('');
+    const [author, setAuthor] = useState('');
     const history = useHistory();
 
     useEffect(()=>{
-        setName(props.author.name);
+        setAuthor(props.author);
     }, [props.author]);
 
-    const onSubmitHandler = () => {
-        props.getFormInputs({name: name});
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        props.getFormInputs(author);
     }
 
     return (
         <div>
             <form onSubmit={onSubmitHandler}>
                 <label>Author Name</label><br />
-                <input type="text" onChange={(e) => setName(e.target.value)} value={name} />
+                <input type="text" onChange={(e) =>{e.preventDefault(); setAuthor({name: e.target.value});}} value={author.name} />
                 <input type="submit" value='create' />
             </form>
             <button onClick={()=>history.push('/')}>Cancel</button>
