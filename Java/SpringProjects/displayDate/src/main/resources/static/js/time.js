@@ -1,0 +1,1 @@
+alert("you have acessed the time page");
