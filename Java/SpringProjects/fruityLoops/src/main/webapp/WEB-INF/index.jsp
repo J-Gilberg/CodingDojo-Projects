@@ -11,7 +11,11 @@
 	<script type="text/javascript" src="js/app.js"></script>
 </head>
 <body>
-    <a href="http://localhost:8080/date">Get Date</a>
-    <a href="http://localhost:8080/time">Get Time/></a>
+	<h1>All The Fruit!</h1>
+	<ul>
+	<c:forEach var="fruit" items="${fruit}">
+		<li><c:out value="${fruit.name}"/>: <c:out value="${fruit.price}"/></li>
+	</c:forEach>
+	</ul>
 </body>
 </head>
