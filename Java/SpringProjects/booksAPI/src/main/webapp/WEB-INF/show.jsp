@@ -10,8 +10,12 @@
 	<script type="text/javascript" src="js/app.js"></script>
 </head>
 <body>
-	<h1>Here's Your Omikuji!</h1>
-	<p><c:out value="${message}"/></p>
-	<a href="http://localhost:8080/"></a>
+	<div>
+		<h1>Title: <c:out value="${book.title}"/></h1>
+		<p>Description: <c:out value="${book.description}"/></p>
+		<p>Language: <c:out value="${book.language}"/></p>
+		<p>Pages: <c:out value="${book.numberOfPages}"/></p>
+	</div>
+	<a href="http://localhost:8080/books">Home</a>
 </body>
-</head>
+</head>s
