@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -23,6 +22,13 @@ public class BooksController {
 	public BooksController(BookService bookService){
 	    this.bookService = bookService;
 	}
+	
+	@GetMapping("")
+	public String show(Model model) {
+		List<Book> books = bookService.allBooks();
+		model.addAttribute("books", books);
+		return "index.jsp";
+	}
 	 
 	@GetMapping("/{id}")
 	public String show(@PathVariable("id") Long id, Model model) {
@@ -31,10 +37,10 @@ public class BooksController {
 		return "show.jsp";
 	}
 	
-	@GetMapping("")
-	public String show(Model model) {
-		List<Book> books = bookService.allBooks();
-		model.addAttribute("books", books);
-		return "index.jsp";
+	@PostMapping("/new")
+	public String newBook(@RequestParam("book") Book book) {
+		bookService.addBook(book);
+		return "redirect:/books";
 	}
+	
 }

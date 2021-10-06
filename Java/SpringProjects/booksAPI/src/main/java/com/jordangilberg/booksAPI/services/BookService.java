@@ -45,4 +45,8 @@ public class BookService {
     	Book tempBook = new Book(title, desc, lang, numOfPages);
     	bookRepository.save(tempBook);
     }
+    
+    public void addBook(Book book) {
+    	bookRepository.save(book);
+    }
 }

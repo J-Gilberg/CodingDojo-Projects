@@ -24,5 +24,4 @@ public class loopController {
         
         return "index.jsp";
     }
-	
 }

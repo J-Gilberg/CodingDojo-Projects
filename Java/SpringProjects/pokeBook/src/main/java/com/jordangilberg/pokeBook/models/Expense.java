@@ -1,5 +1,6 @@
-package com.jordangilberg.booksAPI.models;
+package com.jordangilberg.pokeBook.models;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,28 +10,29 @@ import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 @Entity
-@Table(name="books")
-public class Book {
+@Table(name="expense")
+public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	@NotNull
-    @Size(min = 5, max = 200, message="Title must be between 5-200 characters.")
+    @Size(min = 3, max = 40, message="Expense must be between 3-40 characters.")
     private String title;
+    @NotNull
+    @Size(min = 3, max = 40, message="Vendor must be between 3-40 characters.")
+    private String vendor;
     @NotNull
     @Size(min = 5, max = 200 , message="Description must be between 5-200 characters.")
     private String description;
     @NotNull
-    @Size(min = 3, max = 40, message="Language must be between 3-40 characters.")
-    private String language;
-    @NotNull
-    @Size(min = 100, message="Size must be greater than or equal to 100 characters.")
-    private Integer numberOfPages;
+    @DecimalMin("0.0001")
+    private BigDecimal amount;
     // This will not allow the createdAt column to be updated after creation
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -38,13 +40,13 @@ public class Book {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
-    public Book() {
+    public Expense() {
     }
-    public Book(String title, String desc, String lang, int pages) {
+    public Expense(String title, String desc, String vendor, BigDecimal amount) {
         this.title = title;
         this.description = desc;
-        this.language = lang;
-        this.numberOfPages = pages;
+        this.vendor = vendor;
+        this.amount = amount;
     }
     
     @PrePersist
@@ -74,16 +76,16 @@ public class Book {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getLanguage() {
-		return language;
+	public String getVendor() {
+		return vendor;
 	}
-	public void setLanguage(String language) {
-		this.language = language;
+	public void setVendor(String vendor) {
+		this.vendor = vendor;
 	}
-	public Integer getNumberOfPages() {
-		return numberOfPages;
+	public BigDecimal getAmount() {
+		return amount;
 	}
-	public void setNumberOfPages(Integer numberOfPages) {
-		this.numberOfPages = numberOfPages;
+	public void setAmount(BigDecimal amount) {
+		this.amount = amount;
 	}
 }
