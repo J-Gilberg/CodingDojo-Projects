@@ -78,9 +78,39 @@ class DLL{
             
         }
     }   
+
+    reverse(){
+        let runner = this.tail;
+        this.tail = this.head;
+        this.head = runner;
+        let temp;
+        while(runner){
+            temp = runner.prev;
+            runner.prev = runner.next;
+            runner.next = temp;
+            runner = runner.next;
+        }
+    }
+
+    recursiveReverse(runner = this.head){
+        let temp;
+        if(runner == null){
+            temp = this.head;
+            this.head = this.tail;
+            this.tail = temp;
+        }else{
+            temp = runner.prev;
+            runner.prev = runner.next;
+            runner.next = temp;
+            this.recursiveReverse(runner.prev);
+        }
+    }
 }
 
 var list = new DLL();
+list.addFront(8);
+list.addFront(7);
+list.addFront(6);
 list.addFront(5);
 list.addFront(4);
 list.addFront(3);
@@ -88,18 +118,7 @@ list.addFront(2);
 list.addFront(1);
 list.print();
 console.log();
-list.printBackwards();
-list.addBack(6);
-list.addBack(7);
-list.addBack(8);
-console.log();
+list.recursiveReverse();
 list.print();
-console.log();
-list.printBackwards();
-list.remFront();
-console.log();
-list.print();
-list.removeBack();
-console.log();
-list.print();
+
 
