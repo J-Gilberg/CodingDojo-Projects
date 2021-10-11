@@ -11,7 +11,14 @@
 	<div>
 		<h1>Title: <c:out value="${book.title}"/></h1>
 		<p>Author: <c:out value="${book.author}"/></p>
-		<h2>${book.user.getUserName()} read ${book.title} by ${book.author}</h2><br />
+		<h2>
+			<c:if test = "${book.user.getId().equals(user_id)}"> 
+				You read ${book.title} by ${book.author}
+			</c:if>
+			<c:if test = "!${book.user.getId().equals(user_id)}"> 
+				${book.user.getUserName()} read ${book.title} by ${book.author}
+			</c:if>
+		</h2><br />
 		<h2>Here are ${book.user.getUserName()}'s thoughts:</h2><br />
 		<p><c:out value="${book.thoughts}"/></p>
 		<c:if test="${book.user.getId() == id}">
