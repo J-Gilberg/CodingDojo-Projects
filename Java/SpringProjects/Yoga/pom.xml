@@ -11,8 +11,7 @@
 	<groupId>com.jordangilberg</groupId>
 	<artifactId>yoga</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>books</name>
-	<description>Books API Assignment</description>
+	<name>yoga</name>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -73,4 +72,6 @@
 		</plugins>
 	</build>
 
+	<packaging>war</packaging>
+	<description>Java Coding Dojo Exam</description>
 </project>

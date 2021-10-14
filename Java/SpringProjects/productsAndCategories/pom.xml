@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.jordangilberg</groupId>
-	<artifactId>yoga</artifactId>
+	<artifactId>books</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>books</name>
 	<description>Books API Assignment</description>

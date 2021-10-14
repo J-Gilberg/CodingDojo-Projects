@@ -59,6 +59,69 @@ class BST {
     print(){
 
     }
+
+    contains(value, runner = this.root , found = false){
+        if(runner){
+            if(runner.left && value < runner.value ) found = this.contains(value, runner.left, found);
+            if(runner.right && value > runner.value) found = this.contains(value, runner.right, found);
+            if(value == runner.value) found = true;
+            return found;
+        }
+        return found;
+    }
+
+    size(runner = this.root, count = 0){
+        if(runner){
+            if(runner.left) count = this.size(runner.left, count);
+            if(runner.right) count = this.size(runner.right, count);
+            return ++count;
+        }
+        return count;
+    }
+
+    depth(runner = this.root, count = 0){
+        if(runner){
+            let leftCount = count;
+            let rightCount = count;
+            if(runner.left) leftCount = this.depth(runner.left, count);
+            if(runner.right) rightCount = this.depth(runner.right, count);
+            if(leftCount > rightCount){
+                count = leftCount
+            }else{
+                count = rightCount
+            }
+            console.log(`Value: ${runner.value}`);
+            console.log(`Count: ${count}`);
+            return ++count;
+        }
+        return count;
+    }
+
+    isBalance(runner = this.root, count = 0){
+        if(runner){
+            let leftCount = count;
+            let rightCount = count;
+            if(runner.left) leftCount = this.depth(runner.left, count);
+            if(runner.right) rightCount = this.depth(runner.right, count);
+            if(runner === this.root){
+                if(Math.abs(leftCount - rightCount) <= 1){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            if(leftCount > rightCount){
+                count = leftCount
+            }else{
+                count = rightCount
+            }
+            console.log(`Value: ${runner.value}`);
+            console.log(`Count: ${count}`);
+            return ++count;
+        }
+        return count;
+    }
+
 }
 
 var list = new BST();
@@ -74,8 +137,14 @@ list.addNode(1);
 list.addNode(18);
 list.addNode(10);
 
-console.log(list.findMax());
-console.log(list.findMin());
+// console.log(list.findMax());
+// console.log(list.findMin());
+// console.log(list.contains(11));
+// console.log(list.contains(5));
+
+// console.log(list.size());
+console.log(list.depth());
+console.log(list.isBalance());
 
 
 
