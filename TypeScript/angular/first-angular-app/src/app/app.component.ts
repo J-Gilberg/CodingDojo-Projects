@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'first-angular-app';
+  data: any[] =[
+    {title: 'Task', color: 'red'}
+    ,{title: 'Time', color: 'blue'}
+    ,{title: 'Something', color: 'green'}
+  ];
+  constructor(){}
 }
